@@ -1,0 +1,4 @@
+﻿cd c:\Windows\system32\inetsrv
+./appcmd.exe add apppool /name:"route.comm100.com" /managedRuntimeVersion:v4.0 /managedPipelineMode:Integrated /processModel.identityType:"SpecificUser" /processModel.userName:"WebUser" /processModel.password:"skfksAdsds!@32543"
+./appcmd.exe add site /name:"route.comm100.com"  /bindings:"http/*:80:route.comm100.com,https/*:443:route.comm100.com" /physicalPath:"C:\website\route.comm100.com" /applicationDefaults.applicationPool:"route.comm100.com" /virtualDirectoryDefaults.userName:"WebUser" /virtualDirectoryDefaults.password:"skfksAdsds!@32543"
+./appcmd.exe add app /site.name:"route.comm100.com" /path:"/routeserver" /physicalPath:"C:\website\route.comm100.com\routeserver" /applicationpool:"route.comm100.com" /virtualDirectoryDefaults.userName:"WebUser" /virtualDirectoryDefaults.password:"skfksAdsds!@32543"

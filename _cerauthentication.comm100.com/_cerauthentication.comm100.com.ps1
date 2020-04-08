@@ -1,0 +1,3 @@
+﻿cd c:\Windows\system32\inetsrv
+./appcmd.exe add apppool /name:"_cerauthentication.comm100.com" /managedRuntimeVersion:v4.0 /managedPipelineMode:Integrated /processModel.identityType:"SpecificUser" /processModel.userName:"WebUser" /processModel.password:"skfksAdsds!@32543"
+./appcmd.exe add site /name:"_cerauthentication.comm100.com"  /bindings:"http/*:80:_cerauthentication.comm100.com,https/*:443:_cerauthentication.comm100.com" /physicalPath:"C:\website\_cerauthentication.comm100.com" /applicationDefaults.applicationPool:"_cerauthentication.comm100.com" /virtualDirectoryDefaults.userName:"WebUser" /virtualDirectoryDefaults.password:"skfksAdsds!@32543"
